@@ -40,6 +40,23 @@
             background: #eaeaea;
         }
 
+        .card .body {
+            padding: 0px;
+            padding-left: 20px;
+        }
+
+        .dropdown-content li>span {
+            color: #026AA6;
+        }
+
+        .select-wrapper input.select-dropdown:hover {
+            border-bottom: 1px solid #026AA6;
+        }
+
+        .select-wrapper input.select-dropdown:focus {
+            border-bottom: 1px solid #026AA6;
+        }
+
         .container-body {
             margin: auto;
             width: 90%;
@@ -76,6 +93,7 @@
             box-shadow: 0 4px 20px 4px rgba(0, 20, 60, .1), 0 4px 80px -8px rgba(0, 20, 60, .2);
             background-color: #fff;
             border-radius: 4px;
+            z-index: 2;
         }
 
         /* Creates a small triangle extender for the tooltip */
@@ -237,7 +255,7 @@
 
                     /* Initialize tooltip */
                     var tip = d3.tip().attr('class', 'd3-tip').html(function(EVENT, d) {
-                        return "<strong>Total Crime Cases:</strong> <span >" + d.value + "</span>";
+                        return "<strong>Total Cases:</strong> <span >" + d.value + "</span>";
                     });
 
                     // append the svg object to the body of the page
