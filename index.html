@@ -211,7 +211,7 @@
                             left: 50
                         },
                         width = eleWidth.replace("px", "") - 100 - margin.left - margin.right,
-                        height = 400 - 30 - margin.top - margin.bottom;
+                        height = 400 - margin.top - margin.bottom;
 
 
                     yearGroup = new Set(crime_data.map(d => d.year))
@@ -267,11 +267,12 @@
                         .style("text-anchor", "end");
 
                     // Add Y axis
-                    const y = d3.scaleLinear()
+                    const y = d3.scalePow()
                         .domain([0, d3.max(crime_data, function(d) {
                             return +d.value;
                         })])
-                        .range([height, 0]);
+                        .range([height, 0])
+                        .exponent(0.3);;
                     svg.append("g")
 
                         .call(d3.axisLeft(y));
